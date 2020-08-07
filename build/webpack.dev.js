@@ -32,9 +32,15 @@ module.exports = function (options) {
   }), {
     mode: 'development',
     entry: path.resolve(__dirname, '../example/index.js'),
-    devtool: 'inline-source-map',
+    devtool: 'cheap-module-eval-source-map',
     devServer: {
-      contentBase: [path.resolve(__dirname, '..'), path.resolve(__dirname, '../mock')],
+      historyApiFallback: true,
+      hot: true,
+      quiet: true,
+      compress: true,
+      host: '0.0.0.0',
+      disableHostCheck: true,
+      contentBase: [path.resolve(__dirname, '../'), path.resolve(__dirname, '../mock')],
       before (app) {
         app.all(
           ['/api/*'],
@@ -79,12 +85,6 @@ module.exports = function (options) {
           // pathRewrite: { '^/api': '' },
           changeOrigin: true
         },
-      }
-    },
-    resolve: {
-      extensions: ['.js', '.jsx'],
-      alias: {
-        '@': resolve(__dirname, 'src')
       }
     },
     plugins: [

@@ -18,16 +18,19 @@ module.exports = {
   rules: {
     'react/display-name': 0,
     'react/prop-types': 0,
+    'react/no-unused-prop-types': [0],
+    'object-curly-spacing': 'never',
+    'space-before-function-paren': ["warn", "always"],
     camelcase: 0,
     eqeqeq: 0,
     'max-len': ['error', 120],
-    'comma-dangle': ['error', 'always-multiline'],
-    'space-before-function-paren': ['error', 'never'],
     'object-curly-spacing': ['error', 'never'],
     'arrow-parens': ['error', 'as-needed'],
-    indent: ['error', 2],
-    quotes: ['error', 'double'],
-    'no-console': 0,
-    'jsx-quotes': ['warn', 'double']
+    indent: ['error', 2, { "SwitchCase": 1 }],
+    quotes: ['error', 'single'],
+    'eol-last': 0,
+    'comma-dangle': 0,
+    'object-curly-spacing': 0,
+    'no-irregular-whitespace': ["error", { "skipComments": true }]
   }
 };

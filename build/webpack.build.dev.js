@@ -1,9 +1,7 @@
 const webpackMerge = require('webpack-merge')
 const path = require('path')
-const TerserJSPlugin = require('terser-webpack-plugin') // 替代了UglifyJsPlugin
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const { name: libName } = require('../package.json')
 const base = require('./webpack.base')
+const { name: libName } = require('../package.json')
 
 const isProduction = process.argv.indexOf('-p') > 0
 
@@ -15,20 +13,23 @@ const entrys = {
 
 module.exports = webpackMerge(
   base({
-    dev: !isProduction,
+    dev: true,
   }),
   {
-    mode: isProduction ? 'production' : 'development',
+    mode: 'development',
     optimization: {
-      minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()],
+      minimizer: [
+        // new TerserJSPlugin(),
+        // new OptimizeCSSAssetsPlugin()
+      ],
     },
     devtool: false,
     entry: entrys,
     output: {
       path: path.resolve(__dirname, '../lib'),
-      filename: 'main.min.js',
+      filename: 'main.js',
       library: libName,
-      libraryTarget: 'umd',
+      libraryTarget: 'commonjs2',
     },
     externals: [
       {

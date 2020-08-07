@@ -11,15 +11,22 @@ module.exports = {
     '@babel/preset-react'
   ],
   plugins: [
+    ['@babel/plugin-proposal-class-properties'],
     // 'react-hot-loader/babel',
+    ['@babel/plugin-transform-runtime'],
     '@babel/plugin-syntax-dynamic-import',
-    ['@babel/proposal-class-properties'],
     [
       'import',
       {
-        libraryName: 'dpl-mobile',
+        libraryName: 'andt',
         style: 'css'
       }
     ]
-  ]
-};
+  ].concat(process.env.BUILD_TARGET === 'es' ? [
+    ['babel-plugin-module-resolver', {
+      root: ['../'],
+      alias: {
+        '@': './src'
+      }
+    }]] : [])
+}
