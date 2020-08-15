@@ -1,4 +1,4 @@
-import React from 'react'
+import * as React from 'react'
 import { Input } from 'antd'
 import './index.less'
 
@@ -44,15 +44,23 @@ import './index.less'
 //     })
 //   })
 // }
-
-export const TestComponent = (props: any) => {
-  // realSearchFun('2', { pageSize: 20, current: 1 })
-  return (
-    <React.Fragment>
-      <div className="test-component-wrapper">
-        12312
-        <Input />
+class Greeter extends React.Component<TestComponentProps> {
+  constructor(props) {
+    super(props)
+    this.state = {
+      value: '',
+      list: []
+    }
+  }
+  render() {
+    return (
+      <div>
+        Hello, {this.props.name}
+        <Input />{' '}
       </div>
-    </React.Fragment>
-  )
+    )
+  }
 }
+// console.log('TestComponent1', TestComponent)
+
+export default Greeter

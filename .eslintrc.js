@@ -5,8 +5,8 @@ module.exports = {
     es6: true,
     node: true
   },
-  extends: ['standard', 'standard-react'],
-  parser: 'babel-eslint',
+  parser: '@typescript-eslint/parser',
+  extends: ['plugin:@typescript-eslint/recommended', 'standard', 'standard-react'],
   parserOptions: {
     sourceType: 'module',
     allowImportExportEverywhere: true,
@@ -14,23 +14,22 @@ module.exports = {
       jsx: true
     }
   },
-  plugins: ['react', 'xss'],
+  plugins: ['react', 'xss', '@typescript-eslint'],
   rules: {
     'react/display-name': 0,
     'react/prop-types': 0,
     'react/no-unused-prop-types': [0],
     'object-curly-spacing': 'never',
-    'space-before-function-paren': ["warn", "always"],
+    'space-before-function-paren': ['warn', 'always'],
     camelcase: 0,
     eqeqeq: 0,
     'max-len': ['error', 120],
-    'object-curly-spacing': ['error', 'never'],
     'arrow-parens': ['error', 'as-needed'],
-    indent: ['error', 2, { "SwitchCase": 1 }],
+    indent: ['error', 2, { SwitchCase: 1 }],
     quotes: ['error', 'single'],
     'eol-last': 0,
     'comma-dangle': 0,
     'object-curly-spacing': 0,
-    'no-irregular-whitespace': ["error", { "skipComments": true }]
+    'no-irregular-whitespace': ['error', { skipComments: true }]
   }
-};
+}

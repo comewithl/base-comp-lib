@@ -4,8 +4,9 @@ const signale = require('signale')
 const { Signale } = signale
 
 const tasks = [
-  'rm -rf lib/ es/',
-  'node ./build/build-module.js',
+  'rm -rf lib/ es/ dist/ ts/',
+  'tsc',
+  // 'node ./build/build-module.js',
   'webpack --config build/webpack.build.js -p',
   'webpack --config build/webpack.build.dev.js -p',
   'node ./build/copyFiles.js'

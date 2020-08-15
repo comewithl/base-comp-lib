@@ -13,7 +13,7 @@ const esDir = path.resolve(__dirname, '../es');
  * @param {*} target 目标文件地址
  */
 
-function transformFileSync(source, target) {
+function transformFileSync (source, target) {
   const sourceCode = fs.readFileSync(source).toString();
   const { code } = babel.transformSync(sourceCode, {
     babelrc: true,
@@ -30,15 +30,16 @@ function transformFileSync(source, target) {
  * @param {*} dir 源目录地址
  * @param {*} targetDir 输出目录地址
  */
-function transformDirSync(dir, targetDir) {
+function transformDirSync (dir, targetDir) {
   const list = fs.readdirSync(dir);
   list.forEach(file => {
     const source = path.join(dir, file);
     const target = path.join(targetDir, file);
-    if (path.extname(file) === '.js' || path.extname(file) === '.jsx') {
+    const extname = path.extname(file)
+    if (extname === '.js' || extname === '.jsx' || extname === 'tsx') {
       return transformFileSync(source, target);
     }
-    if (path.extname(file) === '.less') {
+    if (extname === '.less') {
       var readStream = fs.createReadStream(source);
       var writeStream = fs.createWriteStream(target);
       return readStream.pipe(writeStream);
