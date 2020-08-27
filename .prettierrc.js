@@ -8,7 +8,7 @@ module.exports = {
   // true: Put > on the last line instead of at a new line
   jsxBracketSameLine: false,
   // jsx 属性使用双引号
-  jsxSingleQuote: false,
+  jsxSingleQuote: true,
   // 行宽
   printWidth: 100,
   // 换行方式
