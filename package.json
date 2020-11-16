@@ -1,6 +1,6 @@
 {
   "name": "base-comp-lib",
-  "version": "2.0.0-0",
+  "version": "1.0.1",
   "description": "通用业务组件模板",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -10,7 +10,8 @@
     "build-babel": "rm -rf lib/ && babel src -d lib",
     "lint": "eslint src/**/*.tsx example/**/*.js --fix",
     "dev": "webpack-dev-server --config build/webpack.dev.js --open --env.dev",
-    "mock": "webpack-dev-server --config build/webpack.dev.js --env.dev --env.mock"
+    "mock": "webpack-dev-server --config build/webpack.dev.js --env.dev --env.mock",
+    "prepublish": "yarn build"
   },
   "directories": {
     "example": "example",
