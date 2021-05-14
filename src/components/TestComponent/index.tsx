@@ -45,7 +45,7 @@ import './index.less'
 //   })
 // }
 
-export const TestComponent = (props: any) => {
+const TestComponent = (props: any) => {
   // realSearchFun('2', { pageSize: 20, current: 1 })
   return (
     <React.Fragment>
@@ -56,3 +56,5 @@ export const TestComponent = (props: any) => {
     </React.Fragment>
   )
 }
+
+export default TestComponent

@@ -1,5 +1,11 @@
 {
   "compilerOptions": {
+    // 如果webpack声明的引入别名此处也要进行声明
+    "baseUrl":"./",
+    "paths": {
+      "@/*": ["src/*"],
+      "@/components/*": ["src/components/*"]
+      },
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
@@ -18,7 +24,7 @@
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
     "lib": ["dom", "es2018"],
-    "module": "esNext",
+    "module": "commonjs",
     "moduleResolution": "node",
     "rootDirs": ["./src"],
     "outDir": "./ts",
@@ -30,6 +36,6 @@
     "declarationDir": "./ts",
     "importHelpers": true // 减少代码的冗余，类似：@babel/plugin-transform-runtime
   },
-  "include": ["./src"],
-  "exclude": ["node_modules"]
+  "include": ["./src/**/*"],
+  "exclude": ["node_modules","es","lib",  "**/demo/**"]
 }

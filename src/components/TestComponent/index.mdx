@@ -1,0 +1,26 @@
+---
+name: TestComponent 警告提示
+route: /TestComponent
+menu: 组件
+---
+
+import { Playground } from 'docz';
+import TestComponent from './index.tsx';
+
+# TestComponent 警告提示
+
+警告提示，展现需要关注的信息。
+
+## 代码演示
+
+### 基本用法
+
+<Playground>
+  <TestComponent kind="warning">这是一条警告提示</TestComponent>
+</Playground>
+
+## API
+
+| 属性 | 说明     | 类型                                         | 默认值 |
+| ---- | -------- | -------------------------------------------- | ------ |
+| kind | 警告类型 | 'info'/'positive'/'negative'/'warning'非必填 | 'info' |

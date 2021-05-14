@@ -50,7 +50,7 @@ export const TestComponent = (props: any) => {
   return (
     <React.Fragment>
       <div className="test-component-wrapper">
-        12312
+        123121
         <Input />
       </div>
     </React.Fragment>

@@ -9,7 +9,8 @@ module.exports = options => {
     resolve: {
       extensions: ['.js', '.jsx', '.tsx', '.ts', '.less'], // 尽量别放less,scss的extension配置，不然就必须再js/jsx/tsx/ts之后
       alias: {
-        '@': resolve(__dirname, '../src')
+        '@': resolve(__dirname, '../src'),
+        '@/components': resolve(__dirname, '../src/components')
       }
     },
     module: {

@@ -11,7 +11,10 @@
     "lint": "eslint src/**/*.tsx example/**/*.js --fix",
     "dev": "webpack-dev-server --config build/webpack.dev.js --open --env.dev",
     "mock": "webpack-dev-server --config build/webpack.dev.js --env.dev --env.mock",
-    "prepublish2": "node build/prepublish.js"
+    "prepublish2": "node build/prepublish.js",
+    "build:doc": "rimraf doc-site && docz build",
+    "preview:doc": "docz serve",
+    "dev:doc": "docz dev"
   },
   "directories": {
     "example": "example",
@@ -52,6 +55,7 @@
     "chalk": "^4.1.0",
     "commander": "^6.2.0",
     "css-loader": "^1.0.1",
+    "docz": "^2.3.1",
     "eslint": "^7.6.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-config-standard": "^10.2.1",
@@ -66,6 +70,7 @@
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^6.2.0",
     "fs-extra": "^8.1.0",
+    "gatsby-plugin-less": "^5.5.0",
     "hard-source-webpack-plugin": "^0.13.1",
     "html-webpack-plugin": "^3.2.0",
     "inquirer": "^7.3.3",
