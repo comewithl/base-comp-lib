@@ -94,5 +94,8 @@
   },
   "author": "hjunx",
   "license": "ISC",
-  "sideEffects": false
+  "sideEffects": [
+    "*.less",
+    "*.css"
+  ]
 }
